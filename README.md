@@ -5,7 +5,7 @@ Pur uses environment variables to determine the paths for repositories, if this 
 * /usr/repo/pur-community/
 * /usr/repo/unofficial
 
-If you want to add more repositories, you should also add these to the environment variable. Example of using environment variables for declaring your own local repositories.
+If you want to add more repositories, you should also add these to the environment variable. Example of using environment variables for declaring your own local repositories:
 
 
 ```sh
