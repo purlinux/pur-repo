@@ -1,0 +1,16 @@
+#!/bin/sh
+curl -L https://mirrors.edge.kernel.org/pub/software/scm/git/git-2.37.3.tar.gz > data.tar.gz
+
+tar -zxf *.tar.gz
+cd git-*
+
+make configure
+./configure --prefix=$1/usr
+make all doc info
+
+# Install git into the local directory
+make CONFIG_PREFIX="$1/usr" \
+  install \
+  install-doc \
+  install-html \
+  install-info
