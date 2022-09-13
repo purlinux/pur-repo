@@ -1,6 +1,0 @@
-#!/sh
-
-touch furry
-echo "echo hello" > furry
-chmod +x furry
-mv furry /bin/furry
