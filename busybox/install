@@ -6,6 +6,13 @@ tar -xf busybox-*.tar.bz2
 cd busybox-1.35.0
 
 # build the binary 
-make defconfig
-make
+make defconfig                      # make the default configuration 
+make                                # build busybox
+make CONFIG_PREFIX="$1/usr" install # install it into the directories
 
+cd ..
+
+# create the actual symlinks for the programs
+"$1/usr/bin/busybox" --list | while read -r bin; do
+    ln -s busybox "$1/usr/bin/$bin"
+done
