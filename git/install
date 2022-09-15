@@ -11,6 +11,3 @@ make all doc info
 # Install git into the local directory
 make CONFIG_PREFIX="$1/usr" \
   install \
-  install-doc \
-  install-html \
-  install-info
