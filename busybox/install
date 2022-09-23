@@ -2,7 +2,7 @@
 
 export VERSION=$(cat $2/version | tr -d '[:space:]')
 
-wget https://busybox.net/downloads/busybox-${VERSION}.tar.bz2
+curl -L https://busybox.net/downloads/busybox-${VERSION}.tar.bz2
 tar -xf busybox-${VERSION}.tar.bz2
 
 cd busybox-${VERSION}

@@ -1,0 +1,13 @@
+#!/bin/sh
+export VERSION=$(cat $2/version | tr -d '[:space:]')
+
+curl -L http://ftp.gnu.org/gnu/autoconf/autoconf-${VERSION}.tar.gz > data.tar.gz
+tar xvf *.tar.gz
+
+cd autoconf-*
+
+./configure
+make
+make CONFIG_PREFIX="$1/usr" install
+
+cd ..
